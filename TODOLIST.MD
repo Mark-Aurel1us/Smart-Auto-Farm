@@ -11,6 +11,7 @@
 		5. Water pump
 		6. Water level measurer
 		7. Heating circuit
+		8. Soil moisture measurer
 	2. Construction
 		1. Soil pots with holes in the bottom
 		2. Used water collector tank
@@ -30,14 +31,15 @@
 ## Current Objectives
 1. Find open-source alternatives
 2. Create list of all essential materials
-3. Choose between WiFi and Bluetooth
 4. Collect all essential materials
 5. Create a 3D-model of a farm
 6. Cut the greenhouse out of organic glass
-7. Choose heating type between incandescent lamp and heating circuit
 8. Calculate water tank size
 9. Get soil
 10. Get tubes
 11. Get tank
 
 ## Completed Objectives
+
+3. Choose between WiFi and Bluetooth -- WiFi
+7. Choose heating type between incandescent lamp and heating circuit -- Incandescent lamp
