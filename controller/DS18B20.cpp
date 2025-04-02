@@ -2,7 +2,7 @@
 
 // ПРИМЕР ИСПОЛЬЗОВАНИЯ:
 /*
-    float temperature = readTemperature();
+    float temperature = DS18B20_readTemperature();
     
     if (!isnan(temperature)) 
     {
@@ -40,7 +40,7 @@ OneWire oneWire(ONEWIRE_BUS);
 //--------------------------------------------------
 // ФУНКЦИИ
 //--------------------------------------------------
-float readTemperature() 
+float DS18B20_readTemperature() 
 {
     if (ONEWIRE_BUS == -1) 
     {
