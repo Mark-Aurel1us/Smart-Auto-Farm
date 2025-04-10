@@ -14,6 +14,8 @@
     {
         Serial.println("Ошибка при считывании освещенности!");
     }
+
+    delay(1000);
 */
 
 // НЕОБХОДИМЫЕ НАСТРОЙКИ В SETUP:
@@ -28,9 +30,9 @@
 //--------------------------------------------------
 // КОНФИГУРАЦИЯ
 //--------------------------------------------------
-const int BRIGHTNESS_PIN = -1;        // Аналоговый пин (GPIO32)
+const int BRIGHTNESS_PIN = 4;        // Аналоговый пин (GPIO32)
 const float ADC_REF_VOLTAGE = 3.3f;   // Опорное напряжение ESP32
-const int ADC_RESOLUTION = 4095;      // 12-битный АЦП
+const int BRIGHTNESS_ADC_RESOLUTION = 4095;      // 12-битный АЦП
 
 //--------------------------------------------------
 // ФУНКЦИИ
@@ -46,8 +48,8 @@ float ReadLightLevel()
     int rawValue = analogRead(BRIGHTNESS_PIN);
 
     // Инверсия значения для датчиков с обратной логикой
-    int invertedValue = ADC_RESOLUTION - rawValue;
+    int invertedValue = BRIGHTNESS_ADC_RESOLUTION - rawValue;
     
-    // Преобразование в вольты
-    return invertedValue * (ADC_REF_VOLTAGE / ADC_RESOLUTION);
+    // Преобразование в проценты
+    return invertedValue * 100 / BRIGHTNESS_ADC_RESOLUTION;
 }

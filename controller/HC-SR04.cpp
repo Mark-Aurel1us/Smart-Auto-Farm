@@ -14,6 +14,8 @@
     {
         Serial.println("Ошибка измерения!");
     }
+
+    delay(1000);
 */
 
 // НЕОБХОДИМЫЕ НАСТРОЙКИ В SETUP:
@@ -32,7 +34,7 @@
 const int TRIG_PIN = -1;          // Пин TRIG (GPIO23)
 const int ECHO_PIN = -1;          // Пин ECHO (GPIO22)
 const int MAX_DISTANCE = 500;     // Максимальная измеряемая дистанция (см)
-const unsigned long TIMEOUT_US = 30000; // Таймаут измерения (30 мс ~ 5 м)
+const unsigned long ULTRASONIC_TIMEOUT_US = 30000; // Таймаут измерения (30 мс ~ 5 м)
 
 //--------------------------------------------------
 // ФУНКЦИИ
@@ -53,7 +55,7 @@ float getDistance()
     digitalWrite(TRIG_PIN, LOW);
 
     // Измерение длительности отклика
-    unsigned long duration = pulseIn(ECHO_PIN, HIGH, TIMEOUT_US);
+    unsigned long duration = pulseIn(ECHO_PIN, HIGH, ULTRASONIC_TIMEOUT_US);
 
     // Обработка ошибок
     if (duration == 0) 
